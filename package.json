@@ -1,5 +1,5 @@
 {
-  "name": "passport-oauth2-resource-owner-password",
+  "name": "@dpankros/passport-oauth2-resource-owner-password",
   "version": "1.0.0",
   "description": "OAuth 2.0 resource owner password authentication strategy for Passport.",
   "keywords": [
@@ -17,16 +17,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/coolaj86/passport-oauth2-resource-owner-password.git"
+    "url": "git://github.com/dpankros/passport-oauth2-resource-owner-password.git"
   },
   "bugs": {
-    "url": "http://github.com/coolaj86/passport-oauth2-resource-owner-password/issues"
+    "url": "http://github.com/dpankros/passport-oauth2-resource-owner-password/issues"
   },
-  "author": {
-    "name": "AJ ONeal",
-    "email": "coolaj86@gmail.com",
-    "url": "http://coolaj86.com/"
-  },
+  "author": {},
   "licenses": [
     {
       "type": "MIT",
