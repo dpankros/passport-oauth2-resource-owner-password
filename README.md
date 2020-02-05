@@ -1,9 +1,4 @@
-# ~Moved~
-### ~[passport-oauth2-resource-owner-password](https://git.daplie.com/coolaj86/passport-oauth2-resource-owner-password) is now at [git.daplie.com/coolaj86/passport-oauth2-resource-owner-password](https://git.daplie.com/coolaj86/passport-oauth2-resource-owner-password)~
-It's not.  That's a dead link.
-
-Fixed the original package to not require client.  Also added a refresh token strategy that can be used alone or with the resource owner password strategy.
-
+# Passport OAuth2 Resource Owner Strategy
 
 ## Resource Owner Strategy
 ### Purpose
@@ -109,7 +104,7 @@ client [may make] a refresh request to the token endpoint" [RFC 6749 at p. 43](h
 * verified - A function of the type `func(error, client, user, info)`
     * error (Error) - an error object, if an exception occurred
     * client (Required) - a client object.  If there is no client, `{}` is acceptable
-    * authCode (Required) - an object representative of a new access code/refresh token
+    * authCode (Required) - an object representative of the access code/refresh token
     * info (Optional) - any additional information that should be passed back to the client.  Examples include:
         * `created_at`  - a timestamp indicating when the token was created 
         * `expires` - a timestamp indicating when the token will expire
@@ -131,7 +126,7 @@ passport.use(
           }
         }
 
-        const authCode = await createAuthorizationCode(clientId, refreshToken);
+        const authCode = await getAuthorizationCode(clientId, refreshToken);
 
         if (!authCode || authCode.isExpired()) {
           return done(null, null, null);
@@ -146,3 +141,5 @@ passport.use(
 );
 
 ```
+## Credits
+Based upon [passport-oauth2-resource-owner-password](https://git.daplie.com/coolaj86/passport-oauth2-resource-owner-password) is now at [git.daplie.com/coolaj86/passport-oauth2-resource-owner-password](https://git.daplie.com/coolaj86/passport-oauth2-resource-owner-password), but since the original author marked it as having moved homes, and the new home was a dead link, I decided to update it from the last available version, fixing at least one bug and adding the refresh token strategy.
