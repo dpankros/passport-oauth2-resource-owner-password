@@ -31,11 +31,11 @@
   ],
   "main": "./lib/passport-oauth2-resource-owner-password",
   "dependencies": {
-    "pkginfo": "0.2.x",
+    "pkginfo": "^0.2.x",
     "passport": "~0.1.1"
   },
   "devDependencies": {
-    "vows": "0.6.x"
+    "vows": "^0.8.3"
   },
   "scripts": {
     "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
@@ -45,8 +45,8 @@
   },
   "maintainers": [
     {
-      "name": "coolaj86",
-      "email": "coolaj86@gmail.com"
+      "name": "dpankros",
+      "email": "dpankros@gmail.com"
     }
   ]
 }

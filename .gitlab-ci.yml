@@ -1,0 +1,59 @@
+image: node:12
+
+stages:
+  - build
+  - test
+  - deploy
+
+cache:
+  paths:
+    - node_modules
+
+build:
+  stage: build
+  script:
+    - cat ${npmrc} >> .npmrc
+    - npm i
+    - npm run build
+  artifacts:
+    paths:
+      - lib
+      - stats.json
+    expire_in: 30 days
+  only:
+    - main
+    - develop
+
+test:
+  allow_failure: false
+  stage: test
+  script:
+    - npm run lint
+    - npm run test
+  artifacts:
+    paths:
+      - coverage
+    expire_in: 30 days
+  only:
+    - main
+    - develop
+
+doc:
+  allow_failure: true
+  stage: deploy
+  script:
+    - npm run doc
+    - mv docs/ public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  script:
+    - cat ${npmrc_publish} >>.npmrc
+    - npm publish
+  only:
+    - main
