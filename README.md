@@ -1,3 +1,7 @@
+# MOVED
+Now available at: https://gitlab.com/dpankros/passport-oauth2-resource-owner-password
+
+
 # Passport OAuth2 Resource Owner Strategy
 
 ## Resource Owner Strategy
